@@ -27,6 +27,7 @@
     content="Professional window cleaning, gutter clearing, pressure washing & painting across Dublin. Fully insured. Free quotes.">
   <meta name="twitter:image" content="https://www.oghi.ie/img/logo.png">
 
+  <link rel="preload" as="image" href="img/hero.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,17 +43,22 @@
     :root {
       --og-green: #008b3b;
       --og-green-dark: #00662b;
-      --og-orange: #f5821f;
-      --og-orange-dark: #e07015;
-      /* New */
+      /* Darkened orange slightly for better accessibility/contrast (Recommendation 3) */
+      --og-orange: #e67300; 
+      --og-orange-dark: #cc6600;
       --og-dark: #123024;
       --og-light: #f4f7f6;
       --font-heading: 'Poppins', sans-serif;
       --font-body: 'Open Sans', sans-serif;
     }
 
-    body {
+    html {
       scroll-behavior: smooth;
+      /* Added scroll padding to offset the fixed navbar (Recommendation 1) */
+      scroll-padding-top: 85px; 
+    }
+
+    body {
       font-family: var(--font-body);
       color: #444;
       line-height: 1.7;
@@ -211,7 +217,8 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background: url("img/hero.jpeg") center/cover no-repeat;
+      /* Updated to WebP for Recommendation 4 */
+      background: url("img/hero.webp") center/cover no-repeat;
       transform: scale(1.05);
       z-index: 0;
     }
@@ -647,20 +654,15 @@
       color: #fff;
       transform: scale(1.05);
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
   </style>
 
-  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "O Gorman Home Improvements",
     "description": "Professional window cleaning, gutter, fascia & soffit cleaning, pressure washing and painting services across Dublin.",
-    "url": "https://www.ogormanhomeimprovements.com",
+    "url": "https://www.oghi.ie/",
     "telephone": "+353858516961",
     "email": "og.homeimprovements25@gmail.com",
     "image": "https://www.oghi.ie/img/logo.png",
@@ -673,6 +675,16 @@
       "@type": "City",
       "name": "Dublin"
     },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
     "priceRange": "€€",
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -695,7 +707,7 @@
   </script>
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="100">
+<body data-bs-spy="scroll" data-bs-target="#mainNav">
 
   <nav id="mainNav" class="navbar navbar-expand-xl fixed-top shadow-sm">
     <div class="container">
@@ -764,8 +776,6 @@
       </div>
     </div>
   </header>
-
-
 
   <section id="services">
     <div class="container">
@@ -928,25 +938,25 @@
             <div class="row g-3">
               <div class="col-6">
                 <div class="rounded-4 shadow-lg overflow-hidden">
-                  <img src="img/windowsClean.jpg" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
+                  <img src="img/windowsClean.webp" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
                     alt="Streak-free window cleaning" loading="lazy">
                 </div>
               </div>
               <div class="col-6 mt-4">
                 <div class="rounded-4 shadow-lg overflow-hidden">
-                  <img src="img/cleaningGutters.jpg" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
+                  <img src="img/cleaningGutters.webp" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
                     alt="Professional gutter cleaning" loading="lazy">
                 </div>
               </div>
               <div class="col-6">
                 <div class="rounded-4 shadow-lg overflow-hidden">
-                  <img src="img/drivewayAfter.jpg" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
+                  <img src="img/drivewayAfter.webp" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
                     alt="Pressure washed driveway result" loading="lazy">
                 </div>
               </div>
               <div class="col-6 mt-4">
                 <div class="rounded-4 shadow-lg overflow-hidden">
-                  <img src="img/van.jpg" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
+                  <img src="img/van.webp" class="img-fluid w-100" style="aspect-ratio: 1; object-fit: cover;"
                     alt="O Gorman Home Improvements company van" loading="lazy">
                 </div>
               </div>
@@ -1085,108 +1095,102 @@
         </p>
       </div>
       <div class="row g-3">
-        <!-- Driveway Before/After pair 1 -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayBefore.jpg">
+            data-bs-img="img/drivewayBefore.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/drivewayBefore.jpg" class="gallery-thumb"
+            <img src="img/drivewayBefore.webp" class="gallery-thumb"
               alt="Dirty driveway before pressure washing in Dublin" loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayAfter.jpg">
+            data-bs-img="img/drivewayAfter.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/drivewayAfter.jpg" class="gallery-thumb" alt="Clean driveway after pressure washing in Dublin"
+            <img src="img/drivewayAfter.webp" class="gallery-thumb" alt="Clean driveway after pressure washing in Dublin"
               loading="lazy">
           </div>
         </div>
 
-        <!-- Driveway Before/After pair 2 -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayBefore1.jpeg">
+            data-bs-img="img/drivewayBefore1.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/drivewayBefore1.jpeg" class="gallery-thumb"
+            <img src="img/drivewayBefore1.webp" class="gallery-thumb"
               alt="Driveway before professional cleaning process" loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayAfter1.jpeg">
+            data-bs-img="img/drivewayAfter1.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/drivewayAfter1.jpeg" class="gallery-thumb"
+            <img src="img/drivewayAfter1.webp" class="gallery-thumb"
               alt="Driveway after high-quality professional cleaning" loading="lazy">
           </div>
         </div>
 
-        <!-- Driveway Before/After pair 3 -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="0">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayBefore2.jpeg">
+            data-bs-img="img/drivewayBefore2.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/drivewayBefore2.jpeg" class="gallery-thumb" alt="Large driveway section before treatment"
+            <img src="img/drivewayBefore2.webp" class="gallery-thumb" alt="Large driveway section before treatment"
               loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/drivewayAfter2.jpeg">
+            data-bs-img="img/drivewayAfter2.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/drivewayAfter2.jpeg" class="gallery-thumb" alt="Restored and bright driveway after deep clean"
+            <img src="img/drivewayAfter2.webp" class="gallery-thumb" alt="Restored and bright driveway after deep clean"
               loading="lazy">
           </div>
         </div>
 
-        <!-- Gutters Before/After -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/guttersBefore.jpg">
+            data-bs-img="img/guttersBefore.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/guttersBefore.jpg" class="gallery-thumb" alt="Blocked gutter before cleaning in Dublin"
+            <img src="img/guttersBefore.webp" class="gallery-thumb" alt="Blocked gutter before cleaning in Dublin"
               loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/guttersAfter.jpg">
+            data-bs-img="img/guttersAfter.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/guttersAfter.jpg" class="gallery-thumb" alt="Clean gutter after professional cleaning"
+            <img src="img/guttersAfter.webp" class="gallery-thumb" alt="Clean gutter after professional cleaning"
               loading="lazy">
           </div>
         </div>
 
-        <!-- Roof Before/After -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/roofBefore.jpg">
+            data-bs-img="img/roofBefore.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/roofBefore.jpg" class="gallery-thumb" alt="Mossy roof before soft washing" loading="lazy">
+            <img src="img/roofBefore.webp" class="gallery-thumb" alt="Mossy roof before soft washing" loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="250">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/roofAfter.jpg">
+            data-bs-img="img/roofAfter.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/roofAfter.jpg" class="gallery-thumb" alt="Clean roof after soft washing treatment"
+            <img src="img/roofAfter.webp" class="gallery-thumb" alt="Clean roof after soft washing treatment"
               loading="lazy">
           </div>
         </div>
 
-        <!-- Shed Before/After -->
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="300">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/shedBefore.jpg">
+            data-bs-img="img/shedBefore.webp">
             <span class="before-after-label">Before</span>
-            <img src="img/shedBefore.jpg" class="gallery-thumb" alt="Old shed before painting" loading="lazy">
+            <img src="img/shedBefore.webp" class="gallery-thumb" alt="Old shed before painting" loading="lazy">
           </div>
         </div>
         <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="350">
           <div class="gallery-item" data-bs-toggle="modal" data-bs-target="#galleryModal"
-            data-bs-img="img/shedAfter.jpg">
+            data-bs-img="img/shedAfter.webp">
             <span class="before-after-label bg-success">After</span>
-            <img src="img/shedAfter.jpg" class="gallery-thumb" alt="Freshly painted shed after restoration"
+            <img src="img/shedAfter.webp" class="gallery-thumb" alt="Freshly painted shed after restoration"
               loading="lazy">
           </div>
         </div>
@@ -1221,7 +1225,6 @@
       </div>
 
       <div class="row g-4">
-        <!-- Window Cleaning Pricing -->
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
           <div class="pricing-card">
             <div class="pricing-card-header">
@@ -1336,7 +1339,6 @@
           </div>
         </div>
 
-        <!-- Gutter & Fascia Pricing -->
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <div class="pricing-card">
             <div class="pricing-card-header">
@@ -1437,7 +1439,6 @@
           </div>
         </div>
 
-        <!-- Pressure / Soft Washing Pricing -->
         <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="pricing-card">
             <div class="pricing-card-header">
@@ -1626,8 +1627,8 @@
           <h6 class="text-white mt-4">Follow Us</h6>
           <div class="d-flex gap-3">
             <a href="https://www.facebook.com/p/O-Gorman-Home-Improvements-61575668266224/" target="_blank"
-              class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-            <a href="https://instagram.com/ogormanhomeimprovements" target="_blank" class="text-white fs-4"><i
+              class="text-white fs-4" aria-label="Visit our Facebook page"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com/ogormanhomeimprovements" target="_blank" class="text-white fs-4" aria-label="Visit our Instagram page"><i
                 class="bi bi-instagram"></i></a>
           </div>
         </div>
@@ -1704,6 +1705,18 @@
     // Dynamic Copyright Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Fix for Mobile Menu staying open when clicking an anchor link (Recommendation 1)
+    const navLinks = document.querySelectorAll('.nav-item .nav-link');
+    const menuToggle = document.getElementById('navContent');
+    navLinks.forEach((l) => {
+      l.addEventListener('click', () => {
+        if (menuToggle.classList.contains('show')) {
+          const bsCollapse = new bootstrap.Collapse(menuToggle, { toggle: false });
+          bsCollapse.hide();
+        }
+      });
+    });
+
     // Gallery Lightbox Modal Logic
     const galleryModal = document.getElementById('galleryModal');
     if (galleryModal) {
@@ -1750,8 +1763,6 @@
         });
       });
     }
-
-
   </script>
 
 </body>
